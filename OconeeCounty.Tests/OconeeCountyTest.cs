@@ -11,7 +11,7 @@ public class OconeeCountyTest
     [Fact(Skip = "Internal Tests")]
     public async Task Test()
     {
-        var oconee = new OconeeCounty(new FileCompare(null));
+        var oconee = new OconeeCounty(new FileCompare());
         var currentFilePath = @"\\anf-fs01\edi\_Carrier_Output_Files\Oconee_Payroll\OconeeDeductionChangeFullFile.csv";
         var previousFilePath =
             @"\\anf-fs01\edi\_Carrier_Output_Files\Oconee_Payroll\Report Archive\OconeeDeductionChangeFullFile_08.19.2022_05.00.44.csv";
@@ -52,7 +52,7 @@ public class OconeeCountyTest
         var priorFilePath =
             @"\\anf-fs01\edi\_Carrier_Output_Files\Oconee_Payroll\Audits\07.01 And 07.08 File Duplicates\OconeeDeductionChangeFullFile_07.01.2022.csv";
 
-        var fileCompare = new FileCompare(null);
+        var fileCompare = new FileCompare();
 
         var results = new List<IhrFullFile>()
         {
@@ -76,7 +76,7 @@ public class OconeeCountyTest
         var priorFilePath =
             @"\\anf-fs01\edi\_Carrier_Output_Files\Oconee_Payroll\Audit\07.01 And 07.08 File Duplicates\07.08.2022\OconeeDeductionChangeFullFile_06.24.2022.csv";
 
-        var fileCompare = new FileCompare(null);
+        var fileCompare = new FileCompare();
 
         var results = fileCompare.Compare<IhrFullFile>(currentFilePath, priorFilePath,
             OconeeConstants.PremiumPropertyName, OconeeConstants.PropertiesToIgnore);
