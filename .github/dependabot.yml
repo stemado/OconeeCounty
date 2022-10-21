@@ -1,0 +1,14 @@
+version: 2
+registries:
+  cafe125-github:
+    type: nuget-feed
+    url: https://nuget.pkg.github.com/cafe125/index.json
+    username: stemado
+    password: ${{secrets.DEPENDABOTNUGETPACKAGEUPDATES}}
+updates:
+  - package-ecosystem: nuget # See documentation for possible values
+    directory: "/" # Location of package manifests
+    registries:
+      - cafe125-github
+    schedule:
+      interval: "daily"
